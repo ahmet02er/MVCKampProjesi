@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h1> İstatistikler</h1>
+    <br />
+    <div class="card-deck">
+        <div class="card bg-gradient-blue col-md-4" style="max-width: 25rem" ;>
+            <div class="card-header">
+                <h1 class="card-title">Kategori Toplam Sayısı</h1>
+            </div>
+            <div class="card-body fa fa-7x text-center"> @ViewBag.categoryCount </div>
+        </div>
+        <div class="card bg-gradient-indigo col-md-4" style="max-width: 25rem" ;>
+            <div class="card-header">
+                <h1 class="card-title">Yazılım Kategorisine Ait Başlık Sayısı</h1>
+            </div>
+            <div class="card-body fa fa-7x text-center"> @ViewBag.categoryHeading</div>
+        </div>
+        <div class="card bg-gradient-teal col-md-4" style="max-width: 25rem" ;>
+            <div class="card-header">
+                <h1 class="card-title">Adında 'a' Harfi Olan Yazar Sayısı </h1>
+            </div>
+            <div class="card-body fa fa-7x text-center">@ViewBag.writerACharacter</div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="card-deck">
+        <div class="card bg-gradient-pink col-md-4" style="max-width: 38rem" ;>
+            <div class="card-header">
+                <h1 class="card-title">En Çok Başlığa Sahip Kategori </h1>
+            </div>
+            <div class="card-body fa fa-7x text-center">@ViewBag.mostCategory</div>
+        </div>
+        <div class="card bg-gradient-red col-md-4" style="max-width: 38rem" ;>
+            <div class="card-header">
+                <h1 class="card-title">Kategori Durumu 'True' Olanlarla 'False' Olanlar Arasındaki Fark </h1>
+            </div>
+            <div class="card-body fa fa-7x text-center">@ViewBag.categoryDistinctionTrueFalse</div>
+        </div>
+    </div>
+</div>
