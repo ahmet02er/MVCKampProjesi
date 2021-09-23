@@ -68,6 +68,19 @@
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
+    <Compile Include="Migrations\202109221412041_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202109221412041_mig_writer_edit.designer.cs">
+      <DependentUpon>202109221412041_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109230753509_mig_writer_title.cs" />
+    <Compile Include="Migrations\202109230753509_mig_writer_title.designer.cs">
+      <DependentUpon>202109230753509_mig_writer_title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231335312_mig_writer_image.cs" />
+    <Compile Include="Migrations\202109231335312_mig_writer_image.designer.cs">
+      <DependentUpon>202109231335312_mig_writer_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,7 +94,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\202109221412041_mig_writer_edit.resx">
+      <DependentUpon>202109221412041_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109230753509_mig_writer_title.resx">
+      <DependentUpon>202109230753509_mig_writer_title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231335312_mig_writer_image.resx">
+      <DependentUpon>202109231335312_mig_writer_image.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

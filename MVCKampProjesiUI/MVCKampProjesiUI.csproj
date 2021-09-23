@@ -131,11 +131,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminHeadingController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IstatistikController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\AdminWriterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2519,10 +2520,14 @@
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
     <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
     <Content Include="Views\Istatistik\Index.cshtml" />
-    <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\AdminWriter\Index.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\Test2.cshtml" />
+    <Content Include="Views\AdminWriter\AddWriter.cshtml" />
+    <Content Include="Views\AdminWriter\UpdateWriter.cshtml" />
+    <Content Include="Views\AdminHeading\Index.cshtml" />
+    <Content Include="Views\AdminHeading\AddHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
