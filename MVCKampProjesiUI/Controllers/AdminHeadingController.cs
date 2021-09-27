@@ -23,13 +23,13 @@ namespace MVCKampProjesiUI.Controllers
         [HttpGet]
         public ActionResult AddHeading()
         {
-            List<SelectListItem> categoryValue = (from x in categoryManager.GetList() 
-                                                  select new SelectListItem 
-                                                  {Text=x.CategoryName, Value=x.CategoryId.ToString()}).ToList();
+            List<SelectListItem> categoryValue = (from x in categoryManager.GetList()
+                                                  select new SelectListItem
+                                                  { Text = x.CategoryName, Value = x.CategoryId.ToString() }).ToList();
             ViewBag.categoryValue = categoryValue;
             List<SelectListItem> writerValue = (from x in writerManager.GetList()
-                                                  select new SelectListItem
-                                                  { Text = x.WriterLastName + " " + x.WriterSurName, Value = x.WriterId.ToString() }).ToList();
+                                                select new SelectListItem
+                                                { Text = x.WriterLastName + " " + x.WriterSurName, Value = x.WriterId.ToString() }).ToList();
             ViewBag.writerValue = writerValue;
             return View();
         }
@@ -38,7 +38,7 @@ namespace MVCKampProjesiUI.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading heading)
         {
-            heading.HeadingDate = DateTime.Parse( DateTime.Now.ToShortDateString());
+            heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             headingManager.HeadingAdd(heading);
             return RedirectToAction("Index");
             /*
@@ -58,6 +58,39 @@ namespace MVCKampProjesiUI.Controllers
             }
             return View();
             */
+        }
+
+        [HttpGet]
+        public ActionResult UpdateHeading(int id)
+        {
+            List<SelectListItem> categoryValue = (from x in categoryManager.GetList()
+                                                  select new SelectListItem
+                                                  { Text = x.CategoryName, Value = x.CategoryId.ToString() }).ToList();
+            ViewBag.categoryValue = categoryValue;
+            var headingValue = headingManager.GetById(id);
+            return View(headingValue);
+        }
+        [HttpPost]
+        public ActionResult UpdateHeading(Heading heading)
+        {
+            headingManager.HeadingUpdate(heading);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingValue = headingManager.GetById(id);
+            if (headingValue.HeadingStatus == true)
+            {
+                headingValue.HeadingStatus = false;
+            }
+            else
+            {
+                headingValue.HeadingStatus = true;
+            }
+
+            headingManager.HeadingDelete(headingValue);
+            return RedirectToAction("Index");
         }
     }
 }
