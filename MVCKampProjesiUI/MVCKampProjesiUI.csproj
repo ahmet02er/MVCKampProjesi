@@ -2637,6 +2637,7 @@
     <Content Include="SS\PageAbout.jpg" />
     <Content Include="SS\RegisterController.jpg" />
     <Content Include="SS\SkillCard.jpg" />
+    <Content Include="SS\SkillCard1.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
