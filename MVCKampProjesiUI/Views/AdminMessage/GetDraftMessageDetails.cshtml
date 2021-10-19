@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "GetDraftMessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Action("ContactPartial", "AdminContact")
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Mesajı Oku</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="mailbox-read-info">
+                            <h5>Konu: @Html.DisplayFor(x => x.MessageSubject)</h5>
+                            <br />
+                            <h6>
+                                Alıcı: @Html.DisplayFor(x => x.MessageReceiverMail)
+                                <span class="mailbox-read-time float-right">
+                                    @Model.MessageDate.ToString("dd MMMM yyyy")
+                                </span>
+                            </h6>
+                        </div>
+                        <!-- /.mailbox-read-info -->
+                        <!-- /.mailbox-controls -->
+                        <div class="mailbox-read-message">
+                            @Html.Raw(Model.MessageContent)
+                        </div>
+                        <!-- /.mailbox-read-message -->
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+</section>

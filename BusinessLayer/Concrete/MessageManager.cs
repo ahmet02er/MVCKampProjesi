@@ -18,18 +18,28 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
+        public List<Message> GetAllList()
+        {
+            return _messageDal.List(x => x.MessageReceiverMail == "admin@admin.com").Where(x => x.MessageRead == true).ToList();
+        }
+
         public Message GetById(int id)
         {
             return _messageDal.Get(x => x.MessageId == id);
         }
         public List<Message> GetListInbox()
         {
-            return _messageDal.List(x => x.MessageReceiverMail == "admin@admin.com");
+            return _messageDal.List(x => x.MessageReceiverMail =="admin@admin.com");
         }
 
         public List<Message> GetListSendbox()
         {
             return _messageDal.List(x => x.MessageSenderMail == "admin@admin.com");
+        }
+
+        public List<Message> GetListUnRead()
+        {
+            return _messageDal.List(x => x.MessageReceiverMail == "admin@admin.com").Where(x => x.MessageRead == false).ToList();
         }
 
         public void MessageAdd(Message message)
@@ -39,12 +49,12 @@ namespace BusinessLayer.Concrete
 
         public void MessageDelete(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Delete(message);
         }
 
         public void MessageUpdate(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Update(message);
         }
     }
 }

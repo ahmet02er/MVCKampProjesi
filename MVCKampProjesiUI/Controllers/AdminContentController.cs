@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminContentController : Controller
     {
         ContentManager contentManager = new ContentManager(new EfContentDal());

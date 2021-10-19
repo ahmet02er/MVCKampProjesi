@@ -1,0 +1,88 @@
+﻿@using EntityLayer.Concrete
+@model List<SkillCard> 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yetenek Bilgileri Profili</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Skills Profile Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--Custom Theme files-->
+    <link href="~/AdminLTE-3.1.0/Skills_Theme/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//Custom Theme files -->
+    <!--web font-->
+    <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!--//web font-->
+    <!--circle-chart-->
+    <script src="~/AdminLTE-3.1.0/Skills_Theme/js/jquery-1.11.1.min.js"></script>
+    <!--//circle-chart-->
+    <!--ResponsiveTabs-->
+    <script src="~/AdminLTE-3.1.0/Skills_Theme/js/easyResponsiveTabs.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+    <!--//ResponsiveTabs-->
+</head>
+<body>
+    <!-- main -->
+    <div class="main">
+        <h1>Yetenek Bilgileri Profili</h1>
+        <div class="main-info w3l">
+            @foreach (var item in Model)
+            {
+            <div class="main-row">
+                <!-- main-row-one -->
+                <div class="profile-grid logo wthree">
+                    <img src=@item.UserImage alt="">
+                    <h2>@item.UserName </h2>
+                    <p>@item.UserDescription</p>
+
+                </div>
+                <h3 class="title">Yetenekler</h3>
+                <div class="col-md-6 skills-right bar_group">
+
+                    <div class='bar_group__bar thin' label='@item.Skill1 &nbsp;&nbsp;%&nbsp;@item.SkillRatio1' value=@item.SkillRatio1></div>
+                    <div class='bar_group__bar thin' label='@item.Skill2 &nbsp;&nbsp;%&nbsp;@item.SkillRatio2' value=@item.SkillRatio2></div>
+                    <div class='bar_group__bar thin' label='@item.Skill3 &nbsp;&nbsp;%&nbsp;@item.SkillRatio3' value=@item.SkillRatio3></div>
+                    <div class='bar_group__bar thin' label='@item.Skill4 &nbsp;&nbsp;%&nbsp;@item.SkillRatio4' value=@item.SkillRatio4></div>
+                    <div class='bar_group__bar thin' label='@item.Skill5 &nbsp;&nbsp;%&nbsp;@item.SkillRatio5' value=@item.SkillRatio5></div>
+                    <div class='bar_group__bar thin' label='@item.Skill6 &nbsp;&nbsp;%&nbsp;@item.SkillRatio6' value=@item.SkillRatio6></div>
+                    <div class='bar_group__bar thin' label='@item.Skill7 &nbsp;&nbsp;%&nbsp;@item.SkillRatio7' value=@item.SkillRatio7></div>
+                    <div class='bar_group__bar thin' label='@item.Skill8 &nbsp;&nbsp;%&nbsp;@item.SkillRatio8' value=@item.SkillRatio8></div>
+                    <div class='bar_group__bar thin' label='@item.Skill9 &nbsp;&nbsp;%&nbsp;@item.SkillRatio9' value=@item.SkillRatio9></div>
+                    <div class='bar_group__bar thin' label='@item.Skill10 &nbsp;&nbsp;%&nbsp;@item.SkillRatio10' value=@item.SkillRatio10></div>
+                </div>
+                <!--bar-js-->
+                <script src="~/AdminLTE-3.1.0/Skills_Theme/js/bars.js"></script>
+                <!--<div class="social-icons agileits">
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#" class="fb"></a></li>
+                        <li><a href="#" class="gg"></a></li>
+                    </ul>
+                </div>-->
+                <div class="clear"> </div>
+            </div>
+            }
+        </div>
+        <!-- copyright -->
+        <div class="copyright">
+            <p>   © @DateTime.Now.Year Asp.Net MVC Proje Kampı | Tüm Hakları Saklıdır. | A.O.</p>
+        </div>
+        <!-- //copyright -->
+    </div>
+    <!-- main -->
+</body>
+</html>

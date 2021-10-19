@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminHeadingController : Controller
     {
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());

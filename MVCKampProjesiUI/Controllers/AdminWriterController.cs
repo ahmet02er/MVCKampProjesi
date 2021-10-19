@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminWriterController : Controller
     {
         WriterManager writerManager = new WriterManager(new EfWriterDal());

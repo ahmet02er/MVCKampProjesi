@@ -14,6 +14,8 @@ namespace MVCKampProjesiUI.Controllers
     {
 
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View();

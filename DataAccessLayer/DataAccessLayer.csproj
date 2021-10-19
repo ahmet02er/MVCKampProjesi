@@ -52,23 +52,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\ISkillCardDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfRoleDal.cs" />
+    <Compile Include="EntityFramework\EfSkillCardDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202109221412041_mig_writer_edit.cs" />
     <Compile Include="Migrations\202109221412041_mig_writer_edit.designer.cs">
@@ -97,6 +105,34 @@
     <Compile Include="Migrations\202109280650204_mid_add_message.cs" />
     <Compile Include="Migrations\202109280650204_mid_add_message.designer.cs">
       <DependentUpon>202109280650204_mid_add_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109290627396_mid_contact_date.cs" />
+    <Compile Include="Migrations\202109290627396_mid_contact_date.designer.cs">
+      <DependentUpon>202109290627396_mid_contact_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109290846524_mid_add_imagefiles.cs" />
+    <Compile Include="Migrations\202109290846524_mid_add_imagefiles.designer.cs">
+      <DependentUpon>202109290846524_mid_add_imagefiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110121245442_mid_add_admin_role.cs" />
+    <Compile Include="Migrations\202110121245442_mid_add_admin_role.designer.cs">
+      <DependentUpon>202110121245442_mid_add_admin_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110130829116_add_messageTable_modifay.cs" />
+    <Compile Include="Migrations\202110130829116_add_messageTable_modifay.designer.cs">
+      <DependentUpon>202110130829116_add_messageTable_modifay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110141306066_add_aboutTable_status.cs" />
+    <Compile Include="Migrations\202110141306066_add_aboutTable_status.designer.cs">
+      <DependentUpon>202110141306066_add_aboutTable_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110141408480_add_skill_table.cs" />
+    <Compile Include="Migrations\202110141408480_add_skill_table.designer.cs">
+      <DependentUpon>202110141408480_add_skill_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110141411507_add_skill_table_modifay.cs" />
+    <Compile Include="Migrations\202110141411507_add_skill_table_modifay.designer.cs">
+      <DependentUpon>202110141411507_add_skill_table_modifay.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,6 +168,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109280650204_mid_add_message.resx">
       <DependentUpon>202109280650204_mid_add_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109290627396_mid_contact_date.resx">
+      <DependentUpon>202109290627396_mid_contact_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109290846524_mid_add_imagefiles.resx">
+      <DependentUpon>202109290846524_mid_add_imagefiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110121245442_mid_add_admin_role.resx">
+      <DependentUpon>202110121245442_mid_add_admin_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110130829116_add_messageTable_modifay.resx">
+      <DependentUpon>202110130829116_add_messageTable_modifay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110141306066_add_aboutTable_status.resx">
+      <DependentUpon>202110141306066_add_aboutTable_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110141408480_add_skill_table.resx">
+      <DependentUpon>202110141408480_add_skill_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110141411507_add_skill_table_modifay.resx">
+      <DependentUpon>202110141411507_add_skill_table_modifay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

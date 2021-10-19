@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class IstatistikController : Controller
     {
         public ActionResult Index()

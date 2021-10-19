@@ -4,6 +4,8 @@
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@{ string message = "";}
+@{ string color = "";}
 
 <section class="content-header">
     <div class="container-fluid">
@@ -66,6 +68,22 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    if (item.MessageRead == false)
+                                    {
+                                        message = "Okunmadı";
+                                    }
+                                    if (item.MessageRead == true)
+                                    {
+                                        message = "  Okundu";
+                                    }
+                                    if (item.MessageRead == false)
+                                    {
+                                        color = "btn btn-danger btn-sm";
+                                    }
+                                    if (item.MessageRead == true)
+                                    {
+                                        color = "btn btn-success btn-sm";
+                                    }
                                     <tr>
                                         <td>
                                             <div class="icheck-primary">
@@ -79,7 +97,7 @@
                                             <b>@item.MessageSubject</b> @item.MessageContent.Substring(0, 30) ...
                                         </td>
                                         <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
+                                        <td class="mailbox-date"> @(((DateTime)item.MessageDate).ToString("dd MMMM yyyy"))</td>
                                     </tr>
                                 }
                             </tbody>

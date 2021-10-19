@@ -73,13 +73,13 @@
                                                 <label for="check1"></label>
                                             </div>
                                         </td>
-                                        <td class="mailbox-star"><a href="/AdminContact/ContactGetDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                        <td class="mailbox-name"><a href="/AdminContact/ContactGetDetails/@item.MessageId">@item.MessageReceiverMail</a></td>
+                                        <td class="mailbox-star"><a href="/AdminMessage/SendboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="/AdminMessage/SendboxMessageDetails/@item.MessageId">@item.MessageReceiverMail</a></td>
                                         <td class="mailbox-subject">
                                             <b>@item.MessageSubject</b> @item.MessageContent.Substring(0, 30) ...
                                         </td>
                                         <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
+                                        <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd MMMM yyyy"))</td>
                                     </tr>
                                 }
                             </tbody>

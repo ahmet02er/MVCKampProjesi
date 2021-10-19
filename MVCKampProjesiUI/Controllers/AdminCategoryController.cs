@@ -11,10 +11,12 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize]
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
+       
         public ActionResult Index()
         {
             var categoryValue = categoryManager.GetList();

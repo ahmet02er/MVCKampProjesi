@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVCKampProjesiUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminAboutController : Controller
     {
         AboutManager aboutManager = new AboutManager(new EfAboutDal());
@@ -33,6 +34,22 @@ namespace MVCKampProjesiUI.Controllers
         public PartialViewResult AddAboutPartial()
         {
             return PartialView();
+        }
+
+        public ActionResult DeleteAbout(int id)
+        {
+            var aboutValue = aboutManager.GetById(id);
+            if (aboutValue.AboutStatus == true)
+            {
+                aboutValue.AboutStatus = false;
+            }
+            else
+            {
+                aboutValue.AboutStatus = true;
+            }
+
+            aboutManager.AboutDelete(aboutValue);
+            return RedirectToAction("Index");
         }
     }
 }

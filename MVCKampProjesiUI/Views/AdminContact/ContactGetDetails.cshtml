@@ -26,7 +26,7 @@
                                 <h5>Konu: @Html.DisplayFor(x=>x.Subject)</h5>
                                 <h6>
                                     Gönderen: @Html.DisplayFor(x=>x.UserMail)
-                               
+                                    <span class="mailbox-read-time float-right">@Model.ContactDate.ToString("dd MMMM yyyy")</span>
                                 </h6>
                             </div>
                             <div class="mailbox-read-message">
