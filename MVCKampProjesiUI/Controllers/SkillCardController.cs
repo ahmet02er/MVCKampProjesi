@@ -14,6 +14,7 @@ namespace MVCKampProjesiUI.Controllers
         SkillCardManager skillCardManager = new SkillCardManager(new EfSkillCardDal());
         public ActionResult Index()
         {
+
             var skillValue = skillCardManager.GetList();
             return View(skillValue);
         }
