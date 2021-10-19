@@ -1,4 +1,4 @@
 # MVC PROJE KAMPI
-Murat YÜCEDAĞ ile Mvc Proje Kampı
-:100:
-![Image](https://github.com/ahmet02er/MVCKampProjesi/blob/master/MVCKampProjesiUI/SS/SkillCard.jpg)
+##Murat YÜCEDAĞ ile Mvc Proje Kampı
+- :100:
+- ![Image](https://github.com/ahmet02er/MVCKampProjesi/blob/master/MVCKampProjesiUI/SS/SkillCard.jpg)
