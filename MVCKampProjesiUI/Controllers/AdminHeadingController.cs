@@ -42,23 +42,6 @@ namespace MVCKampProjesiUI.Controllers
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             headingManager.HeadingAdd(heading);
             return RedirectToAction("Index");
-            /*
-            HeadingValidator headingValidator = new HeadingValidator();
-            ValidationResult validationResult = headingValidator.Validate(heading);
-            if (validationResult.IsValid)
-            {
-                headingManager.HeadingAdd(heading);
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                foreach (var item in validationResult.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
-            */
         }
 
         [HttpGet]

@@ -15,7 +15,7 @@
     <br />
     @Html.Label("Yazar Unvanı")
     @Html.TextAreaFor(x => x.WriterTitle, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.WriterTitle,"", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(x => x.WriterTitle, "", new { @class = "text-danger" })
     <br />
     @Html.Label("Yazar Adı")
     @Html.TextAreaFor(x => x.WriterLastName, new { @class = "form-control" })
@@ -27,6 +27,10 @@
     <br />
     @Html.Label("Yazar Mail")
     @Html.TextAreaFor(x => x.WriterMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterMail)
+    <br />
+    @Html.Label("Yazar Kullanıcı Adı")
+    @Html.TextAreaFor(x => x.WriterUserName, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterMail)
     <br />
     @Html.Label("Yazar Şifresi")

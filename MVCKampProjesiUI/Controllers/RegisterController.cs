@@ -15,6 +15,7 @@ namespace MVCKampProjesiUI.Controllers
     public class RegisterController : Controller
     {
         AdminManager adminManager = new AdminManager(new EfAdminDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
 
         [HttpGet]
         public ActionResult Index()
@@ -35,6 +36,27 @@ namespace MVCKampProjesiUI.Controllers
             admin.AdminStatus = true;
             adminManager.AdminAdd(admin);
             return RedirectToAction("Index", "Login");
+        }
+
+        [HttpGet]
+        public ActionResult WriterRegister()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterRegister(Writer writer)
+        {
+            SHA256 writerHash = new SHA256CryptoServiceProvider();
+            string userName = writer.WriterUserName;
+            string password = writer.WriterPassword;
+            string userNameResult = Convert.ToBase64String(writerHash.ComputeHash(Encoding.UTF8.GetBytes(userName)));
+            string passwordResult = Convert.ToBase64String(writerHash.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            writer.WriterUserName = userNameResult;
+            writer.WriterPassword = passwordResult;
+            writer.WriterStatus = true;
+            writerManager.WriterAdd(writer);
+            return RedirectToAction("writerLogin", "Login");
         }
     }
 }

@@ -1,14 +1,37 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Hata</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+
+    <link href="~/AdminLTE-3.1.0/error-404/css/smartadmin-production.min.css" rel="stylesheet" />
 </head>
 <body>
-    <hgroup>
-        <h1>Hata.</h1>
-        <h2>İsteğiniz işlenirken bir hata oluştu.</h2>
-    </hgroup>
+    <div id="content" style="opacity: 1;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center error-box">
+                            <br /><br />
+                            <br /><br />
+                            <h6 class="error-text tada animated"><i class="fa fa-times-circle text-danger error-icon-shadow"></i> HATA!!!</h6>
+                            <br>
+                            <p class="lead semi-bold">
+                                <strong>İşlem yürütülürken beklenmedik bir hatayla karşılaşıldı...&#128546;</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<hgroup>
+            <h1>Hata.</h1>
+                <h2>İsteğiniz işlenirken bir hata oluştu.</h2>
+        </hgroup>*@
 </body>
 </html>

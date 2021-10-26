@@ -11,8 +11,8 @@ namespace BusinessLayer.Abstract
     {
         //List<Message> GetListInbox(string listInbox);
         //List<Message> GetListSendbox(string listSendbox);
-        List<Message> GetListInbox();
-        List<Message> GetListSendbox();
+        List<Message> GetListInbox(string parametre);
+        List<Message> GetListSendbox(string parametre);
         List<Message> GetAllList();
         List<Message> GetListUnRead();
         void MessageAdd(Message message);

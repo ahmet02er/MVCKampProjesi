@@ -16,14 +16,14 @@ namespace MVCKampProjesiUI.Controllers
     {
         MessageManager messageManager  = new MessageManager(new EfMessageDal());
         MessageValidator validationRules = new MessageValidator();
-        public ActionResult Inbox()
+        public ActionResult Inbox(string session)
         {
-            var messageValue = messageManager.GetListInbox();
+            var messageValue = messageManager.GetListInbox(session);
             return View(messageValue);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string session)
         {
-            var messageValue = messageManager.GetListSendbox();
+            var messageValue = messageManager.GetListSendbox(session);
             return View(messageValue);
         }
 
@@ -43,7 +43,7 @@ namespace MVCKampProjesiUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult NewMessage(Message message, string button)
+        public ActionResult NewMessage(Message message, string button, string session)
         {
             ValidationResult validationResult = validationRules.Validate(message);
 
@@ -52,7 +52,7 @@ namespace MVCKampProjesiUI.Controllers
                 if (validationResult.IsValid)
                 {
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                    message.MessageSenderMail = "admin@admin.com";
+                    message.MessageSenderMail = session;
                     message.MessageDraft = true;
                     messageManager.MessageAdd(message);
                     return RedirectToAction("Draft");
@@ -70,7 +70,7 @@ namespace MVCKampProjesiUI.Controllers
                 if (validationResult.IsValid)
                 {
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                    message.MessageSenderMail = "admin@admin.com";
+                    message.MessageSenderMail = session;
                     message.MessageDraft = false;
                     messageManager.MessageAdd(message);
                     return RedirectToAction("Sendbox");
@@ -85,9 +85,9 @@ namespace MVCKampProjesiUI.Controllers
             }
             return View();
         }
-        public ActionResult Draft()
+        public ActionResult Draft(string session)
         {
-            var sendList = messageManager.GetListSendbox();
+            var sendList = messageManager.GetListSendbox(session);
             var draftList = sendList.FindAll(x => x.MessageDraft == true);
             return View(draftList);
         }

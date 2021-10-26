@@ -4,13 +4,12 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 3</title>
+    <title>MVC Proje Kampı</title>
 
-    <link href="~/AdminLTE-3.1.0/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -21,6 +20,9 @@
     <link href="~/AdminLTE-3.1.0/dist/css/adminlte.min.css" rel="stylesheet" />
     <!-- Ekko Lightbox -->
     <link href="~/AdminLTE-3.1.0/plugins/ekko-lightbox/ekko-lightbox.css" rel="stylesheet" />
+    <!-- Summernot -->
+    <link href="~/AdminLTE-3.1.0/plugins/summernote/summernote.css" rel="stylesheet" />
+    <link href="~/AdminLTE-3.1.0/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
 </head>
 <!--
 `body` tag options:
@@ -155,7 +157,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/Login/LogOut/" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Çıkış Yap</p>
                             </a>
@@ -208,11 +210,18 @@
     <!-- Summernote -->
     <script src="~/AdminLTE-3.1.0/plugins/summernote/summernote.min.js"></script>
     <script src="~/AdminLTE-3.1.0/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/AdminLTE-3.1.0/plugins/summernote/lang/summernote-tr-TR.min.js"></script>
     <!-- Page Script -->
     <script>
         $(function () {
             //Add text editor
-            $('#compose-textarea').summernote()
+            $('#compose-textarea').summernote({
+                height: 250,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true,                  // set focus to editable area after initializing summernote
+                lang: 'tr-TR' // default: 'en-US'
+            });
         })</script>
     <script>
         $(function () {

@@ -134,6 +134,10 @@
     <Compile Include="Migrations\202110141411507_add_skill_table_modifay.designer.cs">
       <DependentUpon>202110141411507_add_skill_table_modifay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110260852413_mig_Writer_UserName_add.cs" />
+    <Compile Include="Migrations\202110260852413_mig_Writer_UserName_add.designer.cs">
+      <DependentUpon>202110260852413_mig_Writer_UserName_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -189,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110141411507_add_skill_table_modifay.resx">
       <DependentUpon>202110141411507_add_skill_table_modifay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110260852413_mig_Writer_UserName_add.resx">
+      <DependentUpon>202110260852413_mig_Writer_UserName_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
